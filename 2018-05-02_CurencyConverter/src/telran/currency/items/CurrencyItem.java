@@ -22,7 +22,7 @@ public abstract class  CurrencyItem extends AbstractItem{
 	protected static CurrencyRates getRates(String date) {
 		ResponseEntity<CurrencyRates> response=
 		restTemplate.exchange(url+date,
-		HttpMethod.GET, new HttpEntity<String>(headers),
+		HttpMethod.POST, new HttpEntity<String>(headers),
 		CurrencyRates.class);
 		CurrencyRates rates=response.getBody();
 		rates.rates.put("EUR", 1.0);
